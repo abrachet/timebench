@@ -117,7 +117,8 @@ int handleOutput(const TimebenchOptions& options,
     fputc('\n', out);
   }
 
-  fflush(out);
+  fclose(out);
+  stderr = fdopen(2, "w");
   return 0;
 }
 
